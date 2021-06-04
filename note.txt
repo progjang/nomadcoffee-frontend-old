@@ -1,0 +1,23 @@
+#8.0 Create React App
+github repo 생성
+$npx create-react-app nomadcoffee-frontend
+불필요한 파일 제거 및 내부 코드 정리
+$npm start 확인
+
+#8.1 Installing All
+
+npm i styled-components react-hook-form react-router-dom @apollo/client graphql react-helmet-async
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+npm install --save @fortawesome/free-brands-svg-icons
+npm install --save @fortawesome/free-regular-svg-icons
+(comment):
+typescript -> npm install @types/react
+react 모듈을 못찾는 경우 설치
+
+
+
+#8.7 Introduction to Styled components
+$ npm i styled-reset
+
