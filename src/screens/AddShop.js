@@ -1,17 +1,17 @@
 import { gql, useMutation } from "@apollo/client";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+//import styled from "styled-components";
 import AuthLayout from "../components/auth/AuthLayout";
-import BottomBox from "../components/auth/BottomBox";
+//import BottomBox from "../components/auth/BottomBox";
 import Button from "../components/auth/Button";
-import FormBox from "../components/auth/FormBox";
+//import FormBox from "../components/auth/FormBox";
 import Input from "../components/auth/Input";
-import PageTitle from "../components/PageTitle";
-import { FatLink } from "../components/shared";
-import routes from "../routes";
+//import PageTitle from "../components/PageTitle";
+//import { FatLink } from "../components/shared";
+//import routes from "../routes";
 
 const ADD_SHOP_MUTATION = gql`
     mutation addShop(
@@ -27,7 +27,7 @@ const ADD_SHOP_MUTATION = gql`
 `;
 
 function AddShop() {
-    const history = useHistory();
+//    const history = useHistory();
     const onCompleted = (data) => {
         console.log(data);
     }
@@ -38,7 +38,7 @@ function AddShop() {
     });
 
 
-    const {register, handleSubmit, errors, formState} = useForm({
+    const {register, handleSubmit} = useForm({
         mode: "onChange",
     });
 
