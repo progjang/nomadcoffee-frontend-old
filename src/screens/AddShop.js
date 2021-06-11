@@ -2,7 +2,7 @@ import { gql, useMutation } from "@apollo/client";
 //import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 //import styled from "styled-components";
 import AuthLayout from "../components/auth/AuthLayout";
 //import BottomBox from "../components/auth/BottomBox";
