@@ -1,4 +1,5 @@
-import { ApolloClient, InMemoryCache, makeVar } from "@apollo/client";
+import { ApolloClient, createHttpLink, InMemoryCache, makeVar } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 const TOKEN = "TOKEN";
 const DARK_MODE = "DARK_MODE";
@@ -27,11 +28,35 @@ export const disableDarkMode = () => {
   darkModeVar(false);
 };
 
+// export const client = new ApolloClient({
+//   uri: "http://localhost:4000/graphql",
+//   cache: new InMemoryCache(),
+//   headers: {
+//     //token: localStorage.getItem('token') || '',
+//     token: localStorage.getItem(TOKEN) || '', 
+//   },
+// });
+
+const httpLink = createHttpLink({
+  uri:
+      process.env.NODE_ENV === "production"
+      ? "https://nomadcoffee-bk.herokuapp.com/graphql"
+      : "http://localhost:4000/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      token: localStorage.getItem(TOKEN),
+    },
+  };
+});
+
 export const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
-  headers: {
-    //token: localStorage.getItem('token') || '',
-    token: localStorage.getItem(TOKEN) || '', 
+  fetchOptions: {
+    mode: 'no-cors',
   },
 });

@@ -1,6 +1,7 @@
 import { ApolloProvider, useReactiveVar } from "@apollo/client";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./screens/Home";
+import Root from "./screens/Root";
 import Login from "./screens/Login";
 import NotFound from "./screens/NotFound";
 import { client, darkModeVar, isLoggedInVar } from "./apollo";
@@ -22,7 +23,7 @@ function App() {
           <Router>
             <Switch>
               <Route path={routes.home} exact>
-                {isLoggedIn ? <Home /> : <Login />}
+                {isLoggedIn ? <Root /> : <Login />}
               </Route>
               {!isLoggedIn ? (
                 <Route path={routes.signUp}>

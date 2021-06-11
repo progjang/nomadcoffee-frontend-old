@@ -68,6 +68,7 @@ function Login() {
       });
     }
     if (token) {
+      console.log(token);
       logUserIn(token);
     }
   };

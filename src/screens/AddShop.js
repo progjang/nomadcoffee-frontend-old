@@ -43,7 +43,6 @@ function AddShop() {
     });
 
     const onSubmitValid = (data) => {
-        console.log(data);
         if(loading){
             return;
         }
@@ -68,7 +67,6 @@ function AddShop() {
           />
           <Button type="submit" />
         </form>
-      <BottomBox cta="Have an account?" linkText="Log in" link={routes.home} />
         </AuthLayout>
    
     );

@@ -1,10 +1,10 @@
 import { logUserOut } from "../apollo";
 import {gql, useQuery} from "@apollo/client";
 import React from "react";
-import Button from "../components/auth/Button";
+//import Button from "../components/auth/Button";
 import Separator from "../components/auth/Separator";
-import BottomBox from "../components/auth/BottomBox";
-import routes from "../routes";
+//import BottomBox from "../components/auth/BottomBox";
+//import routes from "../routes";
 const LIST_SHOP_QUERY = gql`
 query seeShops($page:Int){
   seeCoffeeshops(page:$page){
