@@ -24,11 +24,9 @@ function useUser(){
     useEffect(()=>{
         if(data?.me === null){
             logUserOut()
-        } else{
-            console.log(data?.me);
         }
     }, [data])
-    return;
+    return { data };
 }
 
 export default useUser;

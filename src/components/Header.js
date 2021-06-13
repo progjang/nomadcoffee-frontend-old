@@ -41,7 +41,7 @@ font-weight: 600;
 
 function Header() {
     const isLoggedIn = useReactiveVar(isLoggedInVar);
-    const loggedInUser = useUser();
+    const {data} = useUser();
     return(
         <SHeader>
             <Wrapper>
@@ -51,7 +51,7 @@ function Header() {
                  <Column>
                  {isLoggedIn?(<>
                     <Icon>
-                     <FontAwesomeIcon icon={faHome} size="lg" />
+                     {data?.me?.username} <FontAwesomeIcon icon={faHome} size="lg" />
                  </Icon>
                  <Icon>
                      <FontAwesomeIcon icon={faCompass} size="lg" />
