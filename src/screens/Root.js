@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import AuthLayout from "../components/auth/AuthLayout";
 import PageCon from "../components/PageCon";
 import ShopBlock from "../components/ShopBlock";
 import routes from "../routes";
@@ -27,8 +26,6 @@ const SEE_COFFEESHOPS_QUERY = gql`
     }
   }
 `;
-
-const Container = styled.div``;
 
 const Welcome = styled.div`
   text-align: center;
@@ -59,8 +56,7 @@ function Root() {
   const calcTotalPage = (totalShops) => Math.ceil(totalShops / 3);
 
   return (
-    <AuthLayout>
-      <Container>
+    <>
         <Title>HOME</Title>
         <Welcome>Welcome to Nomad Coffee.</Welcome>
         <SLink to={routes.add}>Add Your Shop.</SLink>
@@ -78,8 +74,7 @@ function Root() {
             <ShopBlock key={shop.id} shop={shop} />
           ))
         )}
-      </Container>
-    </AuthLayout>
+    </>
   );
 }
 

@@ -1,6 +1,5 @@
 import { ApolloProvider, useReactiveVar } from "@apollo/client";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import Home from "./screens/Home";
 import Root from "./screens/Root";
 import Login from "./screens/Login";
 import NotFound from "./screens/NotFound";
@@ -11,6 +10,7 @@ import SignUp from "./screens/SignUp";
 import routes from "./routes";
 import { HelmetProvider } from "react-helmet-async";
 import AddShop from "./screens/AddShop";
+import Layout from "./components/Layout";
 
 function App() {
   const isLoggedIn = useReactiveVar(isLoggedInVar);
@@ -23,7 +23,7 @@ function App() {
           <Router>
             <Switch>
               <Route path={routes.home} exact>
-                {isLoggedIn ? <Root /> : <Login />}
+                {isLoggedIn ? <Layout><Root /></Layout> : <Login />}
               </Route>
               {!isLoggedIn ? (
                 <Route path={routes.signUp}>
@@ -31,7 +31,7 @@ function App() {
                 </Route>
               ) : null}
               <Route path={routes.add}>
-                <AddShop />
+                <Layout><AddShop /></Layout>
               </Route>
               <Route>
                 <NotFound />
